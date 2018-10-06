@@ -1,0 +1,6 @@
+framework module Pods_EmployeeSignIn {
+  umbrella header "Pods-EmployeeSignIn-umbrella.h"
+
+  export *
+  module * { export * }
+}
