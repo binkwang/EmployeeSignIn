@@ -11,25 +11,24 @@ import SVProgressHUD
 
 class StaffListViewController: UIViewController {
     
-    var dataProvider = StaffListDataProvider()
+    var viewModel = StaffListViewModel()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var signInButton: ActionButton!
     
     @IBAction func signInButtonTapped(_ sender: Any) {
-        if let currentStaffList = dataProvider.currentStaffList,
-            let selectedIndexPath = dataProvider.selectedIndexPath,
-            let fullName = currentStaffList[selectedIndexPath.row].fullName {
-            
-            self.showAlert("Confirm Signin", "Hi \(fullName), confirm your sign in at 8:30am", confirmHandler: { [weak self] in
+        
+        if let message = viewModel.signinConfirmationMessage {
+            self.showAlert("Confirm Signin", message, confirmHandler: { [weak self] in
                 guard let _ = self else { return }
-                
+                // TODO:
                 
                 }, cancelHandler: { [weak self] in
                     guard let _ = self else { return }
+                    // TODO:
             })
-        }        
+        }
     }
     
     override func viewDidLoad() {
@@ -41,7 +40,7 @@ class StaffListViewController: UIViewController {
         self.signInButton.isHidden = true
         
         
-        dataProvider.fetchData(start: {
+        viewModel.fetchData(start: {
             DispatchQueue.main.async {
                 SVProgressHUD.show()
             }
@@ -62,7 +61,7 @@ class StaffListViewController: UIViewController {
     
     func configTableView() {
         tableView.delegate = self
-        tableView.dataSource = dataProvider
+        tableView.dataSource = self
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         tableView.separatorColor = UIColor.gray
         
@@ -80,7 +79,6 @@ class StaffListViewController: UIViewController {
             textFieldInsideSearchBar.backgroundColor = UIColor.light
             textFieldInsideSearchBar.textColor = UIColor.black
         }
-        
     }
     
     
@@ -95,34 +93,18 @@ class StaffListViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDelegate
-
-extension StaffListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        self.dataProvider.selectedIndexPath = indexPath
-        self.tableView.reloadData()
-        self.signInButton.isHidden = false
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-}
 
 // MARK: - UISearchBarDelegate
 
 extension StaffListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.dataProvider.currentStaffList = self.dataProvider.staffList.filter({ staff -> Bool in
+        self.viewModel.currentStaffList = self.viewModel.staffList.filter({ staff -> Bool in
             if searchText.isEmpty { return true }
             guard let isContain = staff.fullName?.lowercased().contains(searchText.lowercased()) else { return false }
             return isContain
         })
-        self.dataProvider.selectedIndexPath = nil
+        self.viewModel.selectedIndexPath = nil
         self.tableView.reloadData()
     }
 }

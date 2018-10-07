@@ -31,8 +31,9 @@ class Service {
     ///
     /// Return user instances.
     ///
-    /// - parameter gotInstance: The callback called after one user instance got parsed.
-    /// - parameter complete: The callback called after all the instance parsed.
+    /// - parameter start: The callback called when remote data request start.
+    /// - parameter gotInstance: The callback called when one user instance got parsed.
+    /// - parameter complete: The callback called when all the instance parsed.
     /// - parameter failure: The callback called when an error happens.
     func fetchUsers(start: @escaping () -> Void,
                     gotInstance: @escaping (_ staff: Staff) -> Void,

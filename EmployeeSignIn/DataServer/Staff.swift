@@ -12,12 +12,6 @@ struct Staff {
     var id: String!
     var fullName: String!
     var avatar: String?
-    
-    init(id: String, fullName: String, avatar: String?) {
-        self.id = id
-        self.fullName = fullName
-        self.avatar = avatar
-    }
 }
 
 extension Staff: Decodable {

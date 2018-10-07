@@ -120,7 +120,7 @@ extension ScanningViewController: AVCaptureMetadataOutputObjectsDelegate {
                 
                 self.showAlert("Confirm Signin", "Hi \(fullName), confirm your sign in at 8:30am", confirmHandler: { [weak self] in
                     guard let _ = self else { return }
-                    
+                    // TODO:
                     
                     
                     
@@ -131,9 +131,5 @@ extension ScanningViewController: AVCaptureMetadataOutputObjectsDelegate {
                 })
             }
         }
-        
-        
-        
-    }
-    
+    }    
 }

@@ -1,5 +1,5 @@
 //
-//  StaffListDataProvider.swift
+//  StaffListViewModel.swift
 //  EmployeeSignIn
 //
 //  Created by Bink Wang on 5/10/18.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class StaffListDataProvider: NSObject, UITableViewDataSource {
+class StaffListViewModel: NSObject {
     
     // MARK: - Properties
     
@@ -17,31 +17,29 @@ class StaffListDataProvider: NSObject, UITableViewDataSource {
     var currentStaffList: [Staff]?
     var selectedIndexPath: IndexPath?
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    
+    // MARK: - Properties for signin alert view
+    
+    var signinConfirmationMessage: String? {
+        if let currentStaffList = self.currentStaffList,
+            let selectedIndexPath = self.selectedIndexPath,
+            let fullName = currentStaffList[selectedIndexPath.row].fullName {
+            return "Hi \(fullName), confirm your sign in at 8:30am." as String
+        }
+        return nil
     }
     
-    // MARK: - DataSource methods
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // MARK: - Functions
+    
+    func numberOfItemsInSection(section: Int) -> Int {
         return currentStaffList?.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: kStaffCellReuseIdentifier, for: indexPath) as? StaffCell else {
-            fatalError("The dequeued cell is not an instance of StaffCell.")
-        }
-        cell.staff = self.currentStaffList?[indexPath.row]
-        
-        cell.isSelectedStatus = false
-        
-        if let selectedIndexPath = selectedIndexPath {
-            if indexPath == selectedIndexPath {
-                cell.isSelectedStatus = true
-            }
-        }        
-        return cell
+    func itemAtIndexPath(indexPath: IndexPath) -> Staff? {
+        return currentStaffList?[indexPath.row]
     }
+    
     
     // MARK: - fetchData
     
