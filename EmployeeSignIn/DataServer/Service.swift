@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 class Service {
     
@@ -40,13 +41,18 @@ class Service {
                     complete: @escaping () -> Void,
                     failure: @escaping (_ errMessage: String) -> Void) {        
         start()
-        let usersRef = Service.shared.ref.child("users")
+        let usersRef = Service.shared.ref.child("staff")
         usersRef.observe(.value, with: { snapshot in
             if let snapshotValue = snapshot.value as? NSArray {
                 snapshotValue.forEach({ (staff) in
-                    if let staff = staff as? NSDictionary, let id = staff["id"] as? String, let fullName = staff["fullName"] as? String {
-                        let avatar = staff["avatar"] as? String
-                        let staff = Staff(id: id, fullName: fullName, avatar: avatar)
+                    if let staff = staff as? NSDictionary,
+                        let uid = staff["uid"] as? String,
+                        let email = staff["email"] as? String,
+                        let displayName = staff["displayName"] as? String {
+                        
+                        let photoURL = staff["photoURL"] as? String
+                        let staff = Staff(uid: uid, email: email, displayName: displayName, photoURL: photoURL)
+                        
                         gotInstance(staff)
                     } else {
                         failure("Data formate error")
@@ -60,4 +66,39 @@ class Service {
             failure(error.localizedDescription)
         }
     }
+    
+    
+    /// signIn
+    ///
+    /// Return user instances or error.
+    ///
+    /// - parameter start: The callback called when request start.
+    /// - parameter success: The callback called when signIn success.
+    /// - parameter failure: The callback called when signIn failed.
+    func signIn(withEmail email: String,
+                start: @escaping () -> Void,
+                success: @escaping (_ user: User) -> Void,
+                failure: @escaping (_ errMessage: String) -> Void) {
+        start()
+        Auth.auth().signIn(withEmail: email, password: "123456", completion: { (authResult, error) in
+            if let error = error {
+                failure(error.localizedDescription)
+            } else if let user: User = authResult?.user {
+                success(user)
+                
+//                print("data.email: \(user.email)")
+//                print("data.photoURL: \(user.photoURL)")
+//                print("data.displayName: \(user.displayName)")
+//                print("data.uid: \(user.uid)")
+                
+            } else {
+                failure("unknow error")
+            }
+            
+        })
+    }
+        
+        
+    
+    
 }

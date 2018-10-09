@@ -30,6 +30,8 @@
 		23C2D9E321671C5500B26869 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9E221671C5500B26869 /* UIColor+.swift */; };
 		23C2D9E82167348A00B26869 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9E72167348A00B26869 /* Service.swift */; };
 		23C2DA1E216A27E700B26869 /* StaffListViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DA1D216A27E700B26869 /* StaffListViewController+UITableView.swift */; };
+		23C2DA20216C34B000B26869 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DA1F216C34B000B26869 /* BaseViewController.swift */; };
+		23C2DA22216C364000B26869 /* StaffDataInQRcode-sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C2DA21216C364000B26869 /* StaffDataInQRcode-sample.json */; };
 		FDAF8D7C43A327FEC4F77231 /* Pods_EmployeeSignInTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F953031D103511804D1FA890 /* Pods_EmployeeSignInTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		23C2D9E221671C5500B26869 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		23C2D9E72167348A00B26869 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		23C2DA1D216A27E700B26869 /* StaffListViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StaffListViewController+UITableView.swift"; sourceTree = "<group>"; };
+		23C2DA1F216C34B000B26869 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		23C2DA21216C364000B26869 /* StaffDataInQRcode-sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "StaffDataInQRcode-sample.json"; sourceTree = "<group>"; };
 		3CFA4640110C3B2FCAF6D094 /* Pods-EmployeeSignInTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeSignInTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmployeeSignInTests/Pods-EmployeeSignInTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B46ECDB76CD2D8EB65E635E /* Pods_EmployeeSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeeSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611D95A59CADB3BE3F5A9ED8 /* Pods-EmployeeSignIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeSignIn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmployeeSignIn/Pods-EmployeeSignIn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,11 +135,13 @@
 				23C2D9DA21663A0700B26869 /* StaffListViewModel.swift */,
 				23C2D9CD21661D0200B26869 /* ScanningViewController.swift */,
 				23C2D9CF21661D3000B26869 /* ConfirmationViewController.swift */,
+				23C2DA1F216C34B000B26869 /* BaseViewController.swift */,
 				23C2D9A72165D8D500B26869 /* Main.storyboard */,
 				23C2D9AA2165D8D600B26869 /* Assets.xcassets */,
 				23C2D9AC2165D8D600B26869 /* LaunchScreen.storyboard */,
 				23C2D9AF2165D8D600B26869 /* Info.plist */,
 				23C2D9C32165DDAE00B26869 /* GoogleService-Info.plist */,
+				23C2DA21216C364000B26869 /* StaffDataInQRcode-sample.json */,
 			);
 			path = EmployeeSignIn;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				23C2D9AE2165D8D600B26869 /* LaunchScreen.storyboard in Resources */,
 				23C2D9C42165DDAE00B26869 /* GoogleService-Info.plist in Resources */,
 				23C2D9AB2165D8D600B26869 /* Assets.xcassets in Resources */,
+				23C2DA22216C364000B26869 /* StaffDataInQRcode-sample.json in Resources */,
 				23C2D9D721662FF600B26869 /* StaffCell.xib in Resources */,
 				23C2D9A92165D8D500B26869 /* Main.storyboard in Resources */,
 			);
@@ -378,6 +385,7 @@
 				23C2D9DB21663A0800B26869 /* StaffListViewModel.swift in Sources */,
 				23C2D9D32166257200B26869 /* Staff.swift in Sources */,
 				23C2D9CE21661D0200B26869 /* ScanningViewController.swift in Sources */,
+				23C2DA20216C34B000B26869 /* BaseViewController.swift in Sources */,
 				23C2D9D92166366C00B26869 /* UIImageView+.swift in Sources */,
 				23C2D9A42165D8D500B26869 /* AppDelegate.swift in Sources */,
 				23C2D9CC21661CEA00B26869 /* StaffListViewController.swift in Sources */,

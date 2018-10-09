@@ -8,8 +8,9 @@
 
 import UIKit
 import AVFoundation
+import SVProgressHUD
 
-class ScanningViewController: UIViewController {
+class ScanningViewController: BaseViewController {
 
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -78,10 +79,6 @@ class ScanningViewController: UIViewController {
             captureSession.stopRunning()
         }
     }
-    
-    let json = """
-{"id": 2, "fullName": "Bink Wang", "avatar": "https://secure.cdn3.wdpromedia.cn/resize/mwImage/1/125/125/90/wdpromedia.disney.go.com/media/wdpro-shdr-assets/prod/zh-cn-cn/system/images/shdr-dine-pinocchio-village-gallery-19-pizza-feast-sq.jpg"}
-""".data(using: .utf8)!
 
 }
 
@@ -98,12 +95,11 @@ extension ScanningViewController: AVCaptureMetadataOutputObjectsDelegate {
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             found(code: stringValue)
         }
-        
         dismiss(animated: true)
     }
     
     private func found(code: String) {
-        print(code)
+        print("code: \(code)")
         
         let jsonData = code.data(using: .utf8)!
         var staff: Staff?
@@ -116,14 +112,10 @@ extension ScanningViewController: AVCaptureMetadataOutputObjectsDelegate {
                 print(error.localizedDescription)
             }
             
-            if let staff = staff, let fullName = staff.fullName {
-                
-                self.showAlert("Confirm Signin", "Hi \(fullName), confirm your sign in at 8:30am", confirmHandler: { [weak self] in
-                    guard let _ = self else { return }
-                    // TODO:
-                    
-                    
-                    
+            if let staff = staff, let displayName = staff.displayName, let email = staff.email {
+                self.showAlert("Confirm Signin", "Hi \(displayName), confirm your sign in at 8:30am", confirmHandler: { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.signIn(withEmail: email)
                     
                     }, cancelHandler: { [weak self] in
                         guard let weakSelf = self else { return }

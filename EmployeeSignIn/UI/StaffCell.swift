@@ -15,8 +15,8 @@ class StaffCell: UITableViewCell {
     var staff: Staff? {
         didSet {
             DispatchQueue.main.async {
-                self.nameLabel.text = self.staff?.fullName
-                self.avatarImageView.renderCellImage(imageUrl: self.staff?.avatar)
+                self.nameLabel.text = self.staff?.displayName
+                self.avatarImageView.renderCellImage(imageUrl: self.staff?.photoURL)
             }
         }
     }

@@ -17,14 +17,20 @@ class StaffListViewModel: NSObject {
     var currentStaffList: [Staff]?
     var selectedIndexPath: IndexPath?
     
+    var selectedStaff: Staff? {
+        if let currentStaffList = self.currentStaffList,
+            let selectedIndexPath = self.selectedIndexPath {
+            return currentStaffList[selectedIndexPath.row]
+        }
+        return nil
+    }
     
     // MARK: - Properties for signin alert view
     
     var signinConfirmationMessage: String? {
-        if let currentStaffList = self.currentStaffList,
-            let selectedIndexPath = self.selectedIndexPath,
-            let fullName = currentStaffList[selectedIndexPath.row].fullName {
-            return "Hi \(fullName), confirm your sign in at 8:30am." as String
+        if let selectedStaff = selectedStaff,
+            let displayName = selectedStaff.displayName {
+            return "Hi \(displayName), confirm your sign in at 8:30am." as String
         }
         return nil
     }

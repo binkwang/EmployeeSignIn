@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class StaffListViewController: UIViewController {
+class StaffListViewController: BaseViewController {
     
     var viewModel = StaffListViewModel()
     
@@ -18,12 +18,10 @@ class StaffListViewController: UIViewController {
     @IBOutlet weak var signInButton: ActionButton!
     
     @IBAction func signInButtonTapped(_ sender: Any) {
-        
         if let message = viewModel.signinConfirmationMessage {
             self.showAlert("Confirm Signin", message, confirmHandler: { [weak self] in
-                guard let _ = self else { return }
-                // TODO:
-                
+                guard let weakSelf = self, let email = weakSelf.viewModel.selectedStaff?.email else { return }
+                weakSelf.signIn(withEmail: email)
                 }, cancelHandler: { [weak self] in
                     guard let _ = self else { return }
                     // TODO:
@@ -39,7 +37,32 @@ class StaffListViewController: UIViewController {
         self.configSearchBar()
         self.signInButton.isHidden = true
         
+        self.fetchStaffData()
+    }
+    
+    private func configTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
+        tableView.separatorColor = UIColor.gray
         
+        let nib = UINib.init(nibName: "StaffCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: kStaffCellReuseIdentifier)
+    }
+    
+    private func configSearchBar() {
+        searchBar.delegate = self
+        searchBar.barTintColor = UIColor.white
+        searchBar.layer.borderWidth = 1
+        searchBar.layer.borderColor = UIColor.white.cgColor
+        
+        if let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField {
+            textFieldInsideSearchBar.backgroundColor = UIColor.light
+            textFieldInsideSearchBar.textColor = UIColor.black
+        }
+    }
+    
+    private func fetchStaffData() {
         viewModel.fetchData(start: {
             DispatchQueue.main.async {
                 SVProgressHUD.show()
@@ -58,39 +81,6 @@ class StaffListViewController: UIViewController {
             }
         }
     }
-    
-    func configTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
-        tableView.separatorColor = UIColor.gray
-        
-        let nib = UINib.init(nibName: "StaffCell", bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: kStaffCellReuseIdentifier)
-    }
-    
-    func configSearchBar() {
-        searchBar.delegate = self
-        searchBar.barTintColor = UIColor.white
-        searchBar.layer.borderWidth = 1
-        searchBar.layer.borderColor = UIColor.white.cgColor
-        
-        if let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField {
-            textFieldInsideSearchBar.backgroundColor = UIColor.light
-            textFieldInsideSearchBar.textColor = UIColor.black
-        }
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showWeatherDetailPage"  {
-//            let indexPath: NSIndexPath = self.tableView.indexPath(for: sender as! WeatherTableViewCell)! as NSIndexPath
-//            if let destinationViewController = segue.destination as? WeatherDetailViewController {
-//                destinationViewController.dayWeather = (self.dataProvider.dayWeather)[indexPath.row]
-//                destinationViewController.cityName = self.cityObject?.name
-//            }
-//        }
-    }
 }
 
 
@@ -101,7 +91,7 @@ extension StaffListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.viewModel.currentStaffList = self.viewModel.staffList.filter({ staff -> Bool in
             if searchText.isEmpty { return true }
-            guard let isContain = staff.fullName?.lowercased().contains(searchText.lowercased()) else { return false }
+            guard let isContain = staff.displayName?.lowercased().contains(searchText.lowercased()) else { return false }
             return isContain
         })
         self.viewModel.selectedIndexPath = nil

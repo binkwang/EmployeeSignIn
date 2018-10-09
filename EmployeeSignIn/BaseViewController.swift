@@ -1,0 +1,46 @@
+//
+//  BaseViewController.swift
+//  EmployeeSignIn
+//
+//  Created by Bink Wang on 9/10/18.
+//  Copyright © 2018 Bink Wang. All rights reserved.
+//
+
+import UIKit
+import SVProgressHUD
+
+class BaseViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func signIn(withEmail email: String) {
+        Service.shared.signIn(withEmail: email, start: {
+            DispatchQueue.main.async {
+                SVProgressHUD.show()
+            }
+        }, success: { [weak self] (user) in
+            guard let weakSelf = self else { return }
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                weakSelf.gotoConfirmationPage()
+            }
+            }, failure: { [weak self] (errorMessage) in
+                guard let weakSelf = self else { return }
+                DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
+                    weakSelf.showAlert("error", errorMessage, confirmHandler: nil, cancelHandler: nil)
+                }
+        })
+    }
+    
+    func gotoConfirmationPage() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let confirmationViewController = storyBoard.instantiateViewController(withIdentifier: "ConfirmationViewController") as? ConfirmationViewController {
+            self.present(confirmationViewController, animated: true, completion: nil)
+        }
+    }
+}

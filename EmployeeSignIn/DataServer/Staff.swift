@@ -9,24 +9,28 @@
 import Foundation
 
 struct Staff {
-    var id: String!
-    var fullName: String!
-    var avatar: String?
+    var uid: String!
+    var email: String!
+    var displayName: String!
+    var photoURL: String?
 }
 
 extension Staff: Decodable {
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case fullName = "fullName"
-        case avatar = "avatar"
+        case uid = "uid"
+        case email = "email"
+        case displayName = "displayName"
+        case photoURL = "photoURL"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let id: String = try container.decode(String.self, forKey: .id)
-        let fullName: String = try container.decode(String.self, forKey: .fullName)
-        let avatar: String = try container.decode(String.self, forKey: .avatar)
+        
+        let uid: String = try container.decode(String.self, forKey: .uid)
+        let email: String = try container.decode(String.self, forKey: .email)
+        let displayName: String = try container.decode(String.self, forKey: .displayName)
+        let photoURL: String = try container.decode(String.self, forKey: .photoURL)
 
-        self.init(id: id, fullName: fullName, avatar: avatar)
+        self.init(uid: uid, email: email, displayName: displayName, photoURL: photoURL)
     }
 }

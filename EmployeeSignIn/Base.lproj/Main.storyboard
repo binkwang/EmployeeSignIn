@@ -97,7 +97,7 @@
         <!--Confirmation View Controller-->
         <scene sceneID="75g-Ld-cbW">
             <objects>
-                <viewController id="cOx-Mn-T3D" customClass="ConfirmationViewController" customModule="EmployeeSignIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmationViewController" id="cOx-Mn-T3D" customClass="ConfirmationViewController" customModule="EmployeeSignIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UtH-J0-q43">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
