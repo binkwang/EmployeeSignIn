@@ -24,9 +24,11 @@ class StaffListViewController: SignInViewController {
                 weakSelf.signIn(withEmail: email)
                 }, cancelHandler: { [weak self] in
                     guard let _ = self else { return }
-                    // TODO:
             })
         }
+    }
+    @IBAction func viewTapped(_ sender: Any) {
+        self.searchBar.resignFirstResponder()
     }
     
     override func viewDidLoad() {

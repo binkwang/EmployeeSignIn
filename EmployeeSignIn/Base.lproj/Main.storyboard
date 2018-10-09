@@ -172,7 +172,7 @@
         <scene sceneID="nkr-Ii-5Zr">
             <objects>
                 <viewController id="dHs-ro-YWk" customClass="StaffListViewController" customModule="EmployeeSignIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8zO-SH-fv7">
+                    <view key="view" contentMode="scaleToFill" id="8zO-SH-fv7" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -223,6 +223,9 @@
                             <constraint firstItem="rn5-hA-HFI" firstAttribute="leading" secondItem="yEk-GJ-jdz" secondAttribute="leading" id="wad-PY-mIj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yEk-GJ-jdz"/>
+                        <connections>
+                            <action selector="viewTapped:" destination="dHs-ro-YWk" eventType="touchUpInside" id="uWb-Lg-hbe"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="gTl-2q-2ua"/>
                     <connections>

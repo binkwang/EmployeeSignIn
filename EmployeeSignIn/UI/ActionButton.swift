@@ -17,7 +17,6 @@ class ActionButton: UIButton {
         layer.shadowOpacity = 0.25
         layer.shadowRadius = 10
         layer.shadowOffset = CGSize(width: 3, height: 3)
-        
         setTitleColor(Theme.tint, for: UIControl.State.normal)
     }
 }

@@ -17,6 +17,7 @@ extension StaffListViewController: UITableViewDelegate, UITableViewDataSource {
         self.viewModel.selectedIndexPath = indexPath
         self.tableView.reloadData()
         self.signInButton.isHidden = false
+        self.searchBar.resignFirstResponder()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
