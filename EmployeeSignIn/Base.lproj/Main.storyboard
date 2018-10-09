@@ -19,14 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or, sign in manually" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPf-Kr-LgT">
-                                <rect key="frame" x="113" y="285" width="149" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in by scanning your badge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISv-RX-Ehq">
+                                <rect key="frame" x="68" y="124" width="239" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3T-fR-P3m" customClass="ActionButton" customModule="EmployeeSignIn" customModuleProvider="target">
-                                <rect key="frame" x="40" y="175" width="295" height="50"/>
+                                <rect key="frame" x="40" y="285" width="295" height="50"/>
                                 <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GN9-1Y-pEq"/>
@@ -36,8 +36,14 @@
                                     <segue destination="Jm7-da-REl" kind="push" id="uaX-Kg-L6f"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or, sign in manually" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPf-Kr-LgT">
+                                <rect key="frame" x="113" y="395" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ide-CD-TIH" customClass="ActionButton" customModule="EmployeeSignIn" customModuleProvider="target">
-                                <rect key="frame" x="40" y="336" width="295" height="50"/>
+                                <rect key="frame" x="40" y="436" width="295" height="50"/>
                                 <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DTd-ZL-6iF"/>
@@ -47,26 +53,29 @@
                                     <segue destination="dHs-ro-YWk" kind="push" id="dwf-a0-63K"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in by scanning your badge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISv-RX-Ehq">
-                                <rect key="frame" x="68" y="124" width="239" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-9Q-KwX">
+                                <rect key="frame" x="87.5" y="165" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="EZo-Tr-ClI"/>
+                                    <constraint firstAttribute="width" secondItem="0Mf-9Q-KwX" secondAttribute="height" multiplier="2:1" id="On0-If-zkq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ide-CD-TIH" firstAttribute="top" secondItem="uPf-Kr-LgT" secondAttribute="bottom" constant="30" id="2jv-GD-L8f"/>
+                            <constraint firstItem="ide-CD-TIH" firstAttribute="top" secondItem="uPf-Kr-LgT" secondAttribute="bottom" constant="20" id="2jv-GD-L8f"/>
                             <constraint firstItem="ISv-RX-Ehq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="41A-m8-WbY"/>
                             <constraint firstItem="ide-CD-TIH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Le-O4-6uT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Y3T-fR-P3m" secondAttribute="trailing" constant="40" id="8I5-ju-91o"/>
                             <constraint firstItem="Y3T-fR-P3m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="8u6-Xz-j8P"/>
+                            <constraint firstItem="0Mf-9Q-KwX" firstAttribute="top" secondItem="ISv-RX-Ehq" secondAttribute="bottom" constant="20" id="AOq-1i-Xc3"/>
                             <constraint firstItem="ISv-RX-Ehq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="CEB-UQ-wHH"/>
                             <constraint firstItem="ide-CD-TIH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Jpv-rc-PQh"/>
+                            <constraint firstItem="0Mf-9Q-KwX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JyO-Ry-Sx5"/>
                             <constraint firstItem="Y3T-fR-P3m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eMf-Gk-ZCp"/>
                             <constraint firstItem="uPf-Kr-LgT" firstAttribute="top" secondItem="Y3T-fR-P3m" secondAttribute="bottom" constant="60" id="hrg-LY-aGi"/>
                             <constraint firstItem="uPf-Kr-LgT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hva-Be-ZKq"/>
-                            <constraint firstItem="Y3T-fR-P3m" firstAttribute="top" secondItem="ISv-RX-Ehq" secondAttribute="bottom" constant="30" id="lSn-gv-DlO"/>
+                            <constraint firstItem="Y3T-fR-P3m" firstAttribute="top" secondItem="0Mf-9Q-KwX" secondAttribute="bottom" constant="20" id="uw8-YX-E83"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ide-CD-TIH" secondAttribute="trailing" constant="40" id="ylG-Pe-EiQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -79,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="736"/>
+            <point key="canvasLocation" x="952.79999999999995" y="735.38230884557731"/>
         </scene>
         <!--Scanning View Controller-->
         <scene sceneID="dw9-yO-Bob">
@@ -258,6 +267,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="card" width="404" height="220"/>
         <image name="morning-sun" width="256" height="256"/>
         <namedColor name="background">
             <color red="0.80784313725490198" green="0.20784313725490197" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -47,9 +47,10 @@ class StaffListViewController: SignInViewController {
         tableView.dataSource = self
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         tableView.separatorColor = UIColor.gray
+        tableView.tableFooterView = UIView.init(frame: CGRect.zero)
         
         let nib = UINib.init(nibName: "StaffCell", bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: kStaffCellReuseIdentifier)
+        tableView.register(nib, forCellReuseIdentifier: kStaffCellReuseIdentifier)
     }
     
     private func configSearchBar() {
