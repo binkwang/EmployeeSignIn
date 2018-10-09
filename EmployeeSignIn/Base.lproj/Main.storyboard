@@ -156,6 +156,10 @@
                         <viewLayoutGuide key="safeArea" id="coK-yD-dT5"/>
                     </view>
                     <navigationItem key="navigationItem" id="dUX-t9-gzs"/>
+                    <connections>
+                        <outlet property="greetingLabel" destination="Yto-Kb-bxC" id="22v-hG-Ryg"/>
+                        <outlet property="signInTimeLabel" destination="KqC-Cj-7o7" id="wUr-Xm-G8V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2U-4f-jpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

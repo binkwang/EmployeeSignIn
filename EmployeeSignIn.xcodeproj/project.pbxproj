@@ -16,7 +16,6 @@
 		23C2D9B92165D8D600B26869 /* EmployeeSignInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9B82165D8D600B26869 /* EmployeeSignInTests.swift */; };
 		23C2D9C42165DDAE00B26869 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23C2D9C32165DDAE00B26869 /* GoogleService-Info.plist */; };
 		23C2D9C72165E44800B26869 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9C62165E44800B26869 /* ActionButton.swift */; };
-		23C2D9CA2165E78A00B26869 /* ActionButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9C92165E78A00B26869 /* ActionButton+.swift */; };
 		23C2D9CC21661CEA00B26869 /* StaffListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9CB21661CEA00B26869 /* StaffListViewController.swift */; };
 		23C2D9CE21661D0200B26869 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9CD21661D0200B26869 /* ScanningViewController.swift */; };
 		23C2D9D021661D3000B26869 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9CF21661D3000B26869 /* ConfirmationViewController.swift */; };
@@ -32,6 +31,7 @@
 		23C2DA1E216A27E700B26869 /* StaffListViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DA1D216A27E700B26869 /* StaffListViewController+UITableView.swift */; };
 		23C2DA20216C34B000B26869 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DA1F216C34B000B26869 /* BaseViewController.swift */; };
 		23C2DA22216C364000B26869 /* StaffDataInQRcode-sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C2DA21216C364000B26869 /* StaffDataInQRcode-sample.json */; };
+		23C2DA24216C43DB00B26869 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DA23216C43DB00B26869 /* Date+.swift */; };
 		FDAF8D7C43A327FEC4F77231 /* Pods_EmployeeSignInTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F953031D103511804D1FA890 /* Pods_EmployeeSignInTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +58,6 @@
 		23C2D9BA2165D8D600B26869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23C2D9C32165DDAE00B26869 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		23C2D9C62165E44800B26869 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
-		23C2D9C92165E78A00B26869 /* ActionButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionButton+.swift"; sourceTree = "<group>"; };
 		23C2D9CB21661CEA00B26869 /* StaffListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListViewController.swift; sourceTree = "<group>"; };
 		23C2D9CD21661D0200B26869 /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		23C2D9CF21661D3000B26869 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		23C2DA1D216A27E700B26869 /* StaffListViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StaffListViewController+UITableView.swift"; sourceTree = "<group>"; };
 		23C2DA1F216C34B000B26869 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		23C2DA21216C364000B26869 /* StaffDataInQRcode-sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "StaffDataInQRcode-sample.json"; sourceTree = "<group>"; };
+		23C2DA23216C43DB00B26869 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		3CFA4640110C3B2FCAF6D094 /* Pods-EmployeeSignInTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeSignInTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmployeeSignInTests/Pods-EmployeeSignInTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B46ECDB76CD2D8EB65E635E /* Pods_EmployeeSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeeSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611D95A59CADB3BE3F5A9ED8 /* Pods-EmployeeSignIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeSignIn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmployeeSignIn/Pods-EmployeeSignIn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,11 +168,11 @@
 		23C2D9C82165E74700B26869 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				23C2D9C92165E78A00B26869 /* ActionButton+.swift */,
 				23C2D9D82166366C00B26869 /* UIImageView+.swift */,
 				23C2D9DC2166FF2E00B26869 /* UIViewController+.swift */,
 				23C2D9E02167170F00B26869 /* UIImage+.swift */,
 				23C2D9E221671C5500B26869 /* UIColor+.swift */,
+				23C2DA23216C43DB00B26869 /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -387,12 +387,12 @@
 				23C2D9CE21661D0200B26869 /* ScanningViewController.swift in Sources */,
 				23C2DA20216C34B000B26869 /* BaseViewController.swift in Sources */,
 				23C2D9D92166366C00B26869 /* UIImageView+.swift in Sources */,
+				23C2DA24216C43DB00B26869 /* Date+.swift in Sources */,
 				23C2D9A42165D8D500B26869 /* AppDelegate.swift in Sources */,
 				23C2D9CC21661CEA00B26869 /* StaffListViewController.swift in Sources */,
 				23C2D9C72165E44800B26869 /* ActionButton.swift in Sources */,
 				23C2D9D621662FF600B26869 /* StaffCell.swift in Sources */,
 				23C2D9E12167170F00B26869 /* UIImage+.swift in Sources */,
-				23C2D9CA2165E78A00B26869 /* ActionButton+.swift in Sources */,
 				23C2D9E321671C5500B26869 /* UIColor+.swift in Sources */,
 				23C2DA1E216A27E700B26869 /* StaffListViewController+UITableView.swift in Sources */,
 			);
