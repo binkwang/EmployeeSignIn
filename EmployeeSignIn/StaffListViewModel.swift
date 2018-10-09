@@ -6,7 +6,6 @@
 //  Copyright © 2018 Bink Wang. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class StaffListViewModel: NSObject {

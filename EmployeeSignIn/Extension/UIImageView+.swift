@@ -12,7 +12,7 @@ import Foundation
 extension UIImageView {
     
     func renderCellImage(imageUrl: String?) {
-        self.image = UIImage(named: "AvatarPlaceholder") // to clear the existing image
+        self.image = UIImage(named: "photo-placeholder") // to clear the existing image
         guard let imageUrl = imageUrl, let url = URL(string: imageUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { [weak self, url] (data, response, error) -> Void in

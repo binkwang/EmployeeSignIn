@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +27,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3T-fR-P3m" customClass="ActionButton" customModule="EmployeeSignIn" customModuleProvider="target">
                                 <rect key="frame" x="40" y="175" width="295" height="50"/>
+                                <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GN9-1Y-pEq"/>
                                 </constraints>
@@ -36,6 +38,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ide-CD-TIH" customClass="ActionButton" customModule="EmployeeSignIn" customModuleProvider="target">
                                 <rect key="frame" x="40" y="336" width="295" height="50"/>
+                                <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DTd-ZL-6iF"/>
                                 </constraints>
@@ -102,7 +105,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MorningSun" translatesAutoresizingMaskIntoConstraints="NO" id="4nB-Qi-DBl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morning-sun" translatesAutoresizingMaskIntoConstraints="NO" id="4nB-Qi-DBl">
                                 <rect key="frame" x="147.5" y="60" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="FDT-Tf-BIQ"/>
@@ -252,6 +255,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MorningSun" width="256" height="256"/>
+        <image name="morning-sun" width="256" height="256"/>
+        <namedColor name="background">
+            <color red="0.80784313725490198" green="0.20784313725490197" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

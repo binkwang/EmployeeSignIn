@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     @IBOutlet weak var scanButton: ActionButton!
     @IBOutlet weak var manualButton: ActionButton!

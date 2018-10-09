@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import SVProgressHUD
 
-class ScanningViewController: BaseViewController {
+class ScanningViewController: SignInViewController {
 
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!

@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class StaffListViewController: BaseViewController {
+class StaffListViewController: SignInViewController {
     
     var viewModel = StaffListViewModel()
     
@@ -57,7 +57,7 @@ class StaffListViewController: BaseViewController {
         searchBar.layer.borderColor = UIColor.white.cgColor
         
         if let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField {
-            textFieldInsideSearchBar.backgroundColor = UIColor.light
+            textFieldInsideSearchBar.backgroundColor = Theme.inputBackground
             textFieldInsideSearchBar.textColor = UIColor.black
         }
     }

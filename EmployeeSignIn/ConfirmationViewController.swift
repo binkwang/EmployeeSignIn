@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfirmationViewController: UIViewController {
+class ConfirmationViewController: BaseViewController {
 
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var signInTimeLabel: UILabel!

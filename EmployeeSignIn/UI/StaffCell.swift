@@ -24,7 +24,7 @@ class StaffCell: UITableViewCell {
     var isSelectedStatus: Bool = false {
         didSet {
             DispatchQueue.main.async {
-                self.statusImageView.image = self.isSelectedStatus ? UIImage(named: "Selected") : UIImage(named: "NoSelect")
+                self.statusImageView.image = self.isSelectedStatus ? UIImage(named: "selected") : UIImage(named: "no-select")
             }
         }
     }

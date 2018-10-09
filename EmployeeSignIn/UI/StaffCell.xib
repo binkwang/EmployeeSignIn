@@ -28,7 +28,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoSelect" translatesAutoresizingMaskIntoConstraints="NO" id="vy8-h6-8gC">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-select" translatesAutoresizingMaskIntoConstraints="NO" id="vy8-h6-8gC">
                         <rect key="frame" x="20" y="35" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="vy8-h6-8gC" secondAttribute="height" multiplier="1:1" id="DbF-yZ-8VF"/>
@@ -63,6 +63,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="NoSelect" width="80" height="80"/>
+        <image name="no-select" width="80" height="80"/>
     </resources>
 </document>
