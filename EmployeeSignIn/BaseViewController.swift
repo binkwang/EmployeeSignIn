@@ -9,12 +9,12 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.navigationBar.tintColor = Theme.tint
         navigationController?.navigationBar.barTintColor = Theme.background
+        navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 }
