@@ -106,20 +106,21 @@ extension ScanningViewController: AVCaptureMetadataOutputObjectsDelegate {
         DispatchQueue.global(qos: .utility).async {
             do {
                 staff = try JSONDecoder().decode(Staff.self, from: jsonData)
-                print(staff as Any)
             } catch let error {
                 print(error.localizedDescription)
             }
             
-            if let staff = staff, let displayName = staff.displayName, let email = staff.email {
-                self.showAlert("Confirm Signin", "Hi \(displayName), confirm your sign in at \(Date().getTime())", confirmHandler: { [weak self] in
-                    guard let weakSelf = self else { return }
-                    weakSelf.signIn(withEmail: email)
-                    
-                    }, cancelHandler: { [weak self] in
+            DispatchQueue.main.async {
+                if let staff = staff, let displayName = staff.displayName, let email = staff.email {
+                    self.showAlert("Confirm Signin", "Hi \(displayName), confirm your sign in at \(Date().getTime())", confirmHandler: { [weak self] in
                         guard let weakSelf = self else { return }
-                        weakSelf.navigationController?.popViewController(animated: true)
-                })
+                        weakSelf.signIn(withEmail: email)
+                        
+                        }, cancelHandler: { [weak self] in
+                            guard let weakSelf = self else { return }
+                            weakSelf.navigationController?.popViewController(animated: true)
+                    })
+                }
             }
         }
     }    

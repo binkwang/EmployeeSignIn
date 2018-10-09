@@ -13,6 +13,10 @@ class ConfirmationViewController: BaseViewController {
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var signInTimeLabel: UILabel!
     
+    @IBAction func backHomeButtonTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configUI()

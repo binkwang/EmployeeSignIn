@@ -133,7 +133,7 @@
                                 </constraints>
                                 <state key="normal" title="GO BACK HOME!"/>
                                 <connections>
-                                    <segue destination="8E3-Sl-Cd1" kind="show" id="B2S-rA-Xtl"/>
+                                    <action selector="backHomeButtonTapped:" destination="cOx-Mn-T3D" eventType="touchUpInside" id="9eD-6b-v5C"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Morning!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yto-Kb-bxC">

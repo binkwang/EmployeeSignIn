@@ -25,7 +25,6 @@
 		23C2D9D92166366C00B26869 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9D82166366C00B26869 /* UIImageView+.swift */; };
 		23C2D9DB21663A0800B26869 /* StaffListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9DA21663A0700B26869 /* StaffListViewModel.swift */; };
 		23C2D9DD2166FF2E00B26869 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9DC2166FF2E00B26869 /* UIViewController+.swift */; };
-		23C2D9E12167170F00B26869 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9E02167170F00B26869 /* UIImage+.swift */; };
 		23C2D9E82167348A00B26869 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2D9E72167348A00B26869 /* Service.swift */; };
 		23C2DA1E216A27E700B26869 /* StaffListViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DA1D216A27E700B26869 /* StaffListViewController+UITableView.swift */; };
 		23C2DA20216C34B000B26869 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2DA1F216C34B000B26869 /* BaseViewController.swift */; };
@@ -68,7 +67,6 @@
 		23C2D9D82166366C00B26869 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		23C2D9DA21663A0700B26869 /* StaffListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListViewModel.swift; sourceTree = "<group>"; };
 		23C2D9DC2166FF2E00B26869 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		23C2D9E02167170F00B26869 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		23C2D9E72167348A00B26869 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		23C2DA1D216A27E700B26869 /* StaffListViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StaffListViewController+UITableView.swift"; sourceTree = "<group>"; };
 		23C2DA1F216C34B000B26869 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 			children = (
 				23C2D9D82166366C00B26869 /* UIImageView+.swift */,
 				23C2D9DC2166FF2E00B26869 /* UIViewController+.swift */,
-				23C2D9E02167170F00B26869 /* UIImage+.swift */,
 				23C2DA23216C43DB00B26869 /* Date+.swift */,
 			);
 			path = Extension;
@@ -405,7 +402,6 @@
 				23C2D9C72165E44800B26869 /* ActionButton.swift in Sources */,
 				23C2DA2B216C5F2000B26869 /* SignInViewController.swift in Sources */,
 				23C2D9D621662FF600B26869 /* StaffCell.swift in Sources */,
-				23C2D9E12167170F00B26869 /* UIImage+.swift in Sources */,
 				23C2DA1E216A27E700B26869 /* StaffListViewController+UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
