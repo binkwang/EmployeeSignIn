@@ -30,11 +30,10 @@ class StaffListViewModel: NSObject {
     var signinConfirmationMessage: String? {
         if let selectedStaff = selectedStaff,
             let displayName = selectedStaff.displayName {
-            return "Hi \(displayName), confirm your sign in at 8:30am." as String
+            return "Hi \(displayName), confirm your sign in at \(Date().getTime())." as String
         }
         return nil
     }
-    
     
     // MARK: - Functions
     

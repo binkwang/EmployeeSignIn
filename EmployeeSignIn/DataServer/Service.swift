@@ -24,6 +24,10 @@ class Service {
     private init() {
         FirebaseApp.configure()
         ref = Database.database().reference()
+    }    
+    
+    var currentUser: User? {
+        return Auth.auth().currentUser
     }
     
     // MARK: -
@@ -85,20 +89,10 @@ class Service {
                 failure(error.localizedDescription)
             } else if let user: User = authResult?.user {
                 success(user)
-                
-//                print("data.email: \(user.email)")
-//                print("data.photoURL: \(user.photoURL)")
-//                print("data.displayName: \(user.displayName)")
-//                print("data.uid: \(user.uid)")
-                
             } else {
                 failure("unknow error")
             }
             
         })
     }
-        
-        
-    
-    
 }

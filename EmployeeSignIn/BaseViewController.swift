@@ -13,8 +13,6 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     func signIn(withEmail email: String) {
@@ -37,10 +35,11 @@ class BaseViewController: UIViewController {
         })
     }
     
-    func gotoConfirmationPage() {
+    private func gotoConfirmationPage() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if let confirmationViewController = storyBoard.instantiateViewController(withIdentifier: "ConfirmationViewController") as? ConfirmationViewController {
-            self.present(confirmationViewController, animated: true, completion: nil)
+//            self.present(confirmationViewController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(confirmationViewController, animated: true)
         }
     }
 }

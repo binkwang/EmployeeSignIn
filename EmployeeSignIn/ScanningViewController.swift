@@ -79,7 +79,6 @@ class ScanningViewController: BaseViewController {
             captureSession.stopRunning()
         }
     }
-
 }
 
 // MARK: - AVCaptureMetadataOutputObjectsDelegate
@@ -113,7 +112,7 @@ extension ScanningViewController: AVCaptureMetadataOutputObjectsDelegate {
             }
             
             if let staff = staff, let displayName = staff.displayName, let email = staff.email {
-                self.showAlert("Confirm Signin", "Hi \(displayName), confirm your sign in at 8:30am", confirmHandler: { [weak self] in
+                self.showAlert("Confirm Signin", "Hi \(displayName), confirm your sign in at \(Date().getTime())", confirmHandler: { [weak self] in
                     guard let weakSelf = self else { return }
                     weakSelf.signIn(withEmail: email)
                     
