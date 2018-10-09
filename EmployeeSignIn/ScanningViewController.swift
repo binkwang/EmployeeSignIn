@@ -106,20 +106,27 @@ extension ScanningViewController: AVCaptureMetadataOutputObjectsDelegate {
         DispatchQueue.global(qos: .utility).async {
             do {
                 staff = try JSONDecoder().decode(Staff.self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if let staff = staff, let displayName = staff.displayName, let email = staff.email {
+                        self.showAlert("Confirm Signin", "Hi \(displayName), confirm your sign in at \(Date().getTime())",
+                            confirmHandler: { [weak self] in
+                                guard let weakSelf = self else { return }
+                                weakSelf.signIn(withEmail: email)
+                            }, cancelHandler: { [weak self] in
+                                guard let weakSelf = self else { return }
+                                weakSelf.navigationController?.popViewController(animated: true)
+                        })
+                    } else {
+                        self.showAlert("Error", "The data is not in correct format", confirmHandler: nil, cancelHandler: nil)
+                        self.captureSession.startRunning()
+                    }
+                }
             } catch let error {
                 print(error.localizedDescription)
-            }
-            
-            DispatchQueue.main.async {
-                if let staff = staff, let displayName = staff.displayName, let email = staff.email {
-                    self.showAlert("Confirm Signin", "Hi \(displayName), confirm your sign in at \(Date().getTime())", confirmHandler: { [weak self] in
-                        guard let weakSelf = self else { return }
-                        weakSelf.signIn(withEmail: email)
-                        
-                        }, cancelHandler: { [weak self] in
-                            guard let weakSelf = self else { return }
-                            weakSelf.navigationController?.popViewController(animated: true)
-                    })
+                DispatchQueue.main.async {
+                    self.showAlert("Error", error.localizedDescription, confirmHandler: nil, cancelHandler: nil)
+                    self.captureSession.startRunning()
                 }
             }
         }

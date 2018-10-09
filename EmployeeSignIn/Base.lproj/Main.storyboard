@@ -31,6 +31,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GN9-1Y-pEq"/>
                                 </constraints>
+                                <color key="tintColor" name="tint"/>
                                 <state key="normal" title="CLICK TO SCAN"/>
                                 <connections>
                                     <segue destination="Jm7-da-REl" kind="push" id="uaX-Kg-L6f"/>
@@ -48,6 +49,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DTd-ZL-6iF"/>
                                 </constraints>
+                                <color key="tintColor" name="tint"/>
                                 <state key="normal" title="CLICK TO START"/>
                                 <connections>
                                     <segue destination="dHs-ro-YWk" kind="push" id="dwf-a0-63K"/>
@@ -136,10 +138,12 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yv-DI-6La" customClass="ActionButton" customModule="EmployeeSignIn" customModuleProvider="target">
                                 <rect key="frame" x="67.5" y="517" width="240" height="50"/>
+                                <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cGp-4N-CO2"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="hEQ-ZW-l0K"/>
                                 </constraints>
+                                <color key="tintColor" name="tint"/>
                                 <state key="normal" title="GO BACK HOME!"/>
                                 <connections>
                                     <action selector="backHomeButtonTapped:" destination="cOx-Mn-T3D" eventType="touchUpInside" id="9eD-6b-v5C"/>
@@ -198,9 +202,11 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xk-GN-xjE" customClass="ActionButton" customModule="EmployeeSignIn" customModuleProvider="target">
                                 <rect key="frame" x="40" y="587" width="295" height="50"/>
+                                <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fGD-sA-cN4"/>
                                 </constraints>
+                                <color key="tintColor" name="tint"/>
                                 <state key="normal" title="SIGN IN"/>
                                 <connections>
                                     <action selector="signInButtonTapped:" destination="dHs-ro-YWk" eventType="touchUpInside" id="UaK-Vk-r3p"/>
@@ -271,6 +277,9 @@
         <image name="morning-sun" width="256" height="256"/>
         <namedColor name="background">
             <color red="0.80784313725490198" green="0.20784313725490197" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tint">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
