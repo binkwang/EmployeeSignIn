@@ -16,11 +16,11 @@ extension UIImageView {
         guard let imageUrl = imageUrl, let url = URL(string: imageUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { [weak self, url] (data, response, error) -> Void in
-            guard let weakSelf = self else { return }
+            guard let strongSelf = self else { return }
             if let data = data, let responseUrl = response?.url {
                 if url.absoluteString == responseUrl.absoluteString { // to confirmed the corrent image for the cell
                     DispatchQueue.main.async {
-                        weakSelf.image = UIImage(data: data)
+                        strongSelf.image = UIImage(data: data)
                     }
                 }
             }

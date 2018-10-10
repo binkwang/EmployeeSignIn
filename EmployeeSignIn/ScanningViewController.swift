@@ -51,7 +51,7 @@ class ScanningViewController: SignInViewController {
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = view.layer.bounds
-        previewLayer.videoGravity = .resizeAspectFill
+        previewLayer.videoGravity = .resizeAspect //.resizeAspectFill
         view.layer.addSublayer(previewLayer)
         
         captureSession.startRunning()
@@ -111,11 +111,11 @@ extension ScanningViewController: AVCaptureMetadataOutputObjectsDelegate {
                     if let staff = staff, let displayName = staff.displayName, let email = staff.email {
                         self.showAlert("Confirm Signin", "Hi \(displayName), confirm your sign in at \(Date().getTime())",
                             confirmHandler: { [weak self] in
-                                guard let weakSelf = self else { return }
-                                weakSelf.signIn(withEmail: email)
+                                guard let strongSelf = self else { return }
+                                strongSelf.signIn(withEmail: email)
                             }, cancelHandler: { [weak self] in
-                                guard let weakSelf = self else { return }
-                                weakSelf.navigationController?.popViewController(animated: true)
+                                guard let strongSelf = self else { return }
+                                strongSelf.navigationController?.popViewController(animated: true)
                         })
                     } else {
                         self.showAlert("Error", "The data is not in correct format", confirmHandler: nil, cancelHandler: nil)

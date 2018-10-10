@@ -53,11 +53,11 @@ class StaffListViewModel: NSObject {
         Service.shared.fetchUsers(start: {
             start()
         }, gotInstance: { [weak self] (staff) in
-            guard let weakSelf = self else { return }
-            weakSelf.staffList.append(staff)
+            guard let strongSelf = self else { return }
+            strongSelf.staffList.append(staff)
             }, complete: { [weak self] in
-                guard let weakSelf = self else { return }
-                weakSelf.currentStaffList = weakSelf.staffList
+                guard let strongSelf = self else { return }
+                strongSelf.currentStaffList = strongSelf.staffList
                 complete()
         }) { (errString) in
             failure(errString)

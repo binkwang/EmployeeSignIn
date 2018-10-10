@@ -20,8 +20,8 @@ class StaffListViewController: SignInViewController {
     @IBAction func signInButtonTapped(_ sender: Any) {
         if let message = viewModel.signinConfirmationMessage {
             self.showAlert("Confirm Signin", message, confirmHandler: { [weak self] in
-                guard let weakSelf = self, let email = weakSelf.viewModel.selectedStaff?.email else { return }
-                weakSelf.signIn(withEmail: email)
+                guard let strongSelf = self, let email = strongSelf.viewModel.selectedStaff?.email else { return }
+                strongSelf.signIn(withEmail: email)
                 }, cancelHandler: { [weak self] in
                     guard let _ = self else { return }
             })
@@ -71,16 +71,16 @@ class StaffListViewController: SignInViewController {
                 SVProgressHUD.show()
             }
         }, complete: { [weak self] in
-            guard let weakSelf = self else { return }
+            guard let strongSelf = self else { return }
             DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
-                weakSelf.tableView.reloadData()
+                strongSelf.tableView.reloadData()
             }
         }) { [weak self] (errMessage) in
-            guard let weakSelf = self else { return }
+            guard let strongSelf = self else { return }
             DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
-                weakSelf.showAlert("error", errMessage, confirmHandler: nil, cancelHandler: nil)
+                strongSelf.showAlert("error", errMessage, confirmHandler: nil, cancelHandler: nil)
             }
         }
     }

@@ -21,16 +21,16 @@ class SignInViewController: BaseViewController {
                 SVProgressHUD.show()
             }
         }, success: { [weak self] (user) in
-            guard let weakSelf = self else { return }
+            guard let strongSelf = self else { return }
             DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
-                weakSelf.gotoConfirmationPage()
+                strongSelf.gotoConfirmationPage()
             }
             }, failure: { [weak self] (errorMessage) in
-                guard let weakSelf = self else { return }
+                guard let strongSelf = self else { return }
                 DispatchQueue.main.async {
                     SVProgressHUD.dismiss()
-                    weakSelf.showAlert("error", errorMessage, confirmHandler: nil, cancelHandler: nil)
+                    strongSelf.showAlert("error", errorMessage, confirmHandler: nil, cancelHandler: nil)
                 }
         })
     }
